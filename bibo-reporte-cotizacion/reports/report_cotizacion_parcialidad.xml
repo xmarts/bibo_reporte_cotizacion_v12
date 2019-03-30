@@ -14,7 +14,7 @@
              <t t-foreach="docs" t-as="o">
                <t t-if="contador==1">
                 
-                <div class="row">
+                <div class="row pull-right">
                   <div class="col-xs-6">
                     <div t-if="o.move_lines and o.move_lines[0].partner_id and o.move_lines[0].partner_id.id != o.partner_id.id">
                             <span><strong>Dirección de entrega:</strong></span>
@@ -113,7 +113,7 @@
                       <t t-set="pack_operation_ids" t-value="o.move_line_ids"/>
                       <t t-as="pack_operation" t-foreach="pack_operation_ids.sorted(key=lambda r: r.product_id.default_code)">
                         <tr>
-                          <td><span t-field="pack_operation.product_id"/></td>0.00
+                          <td><span t-field="pack_operation.product_id"/></td>
                           <td class="text-right"><span t-field="pack_operation.product_qty"/> <span t-field="pack_operation.product_uom_id" groups="product.group_uom"/></td>
                           <!---     SE AGREGO ESTO PRECIO UNITARIO    -->
                           <td>
