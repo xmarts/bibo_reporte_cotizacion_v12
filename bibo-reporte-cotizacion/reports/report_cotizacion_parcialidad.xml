@@ -130,7 +130,7 @@
                             <t t-set="punit" t-value="0"/>
                             <t t-foreach="o.sale_id.order_line" t-as="lines">
                               <t t-if="pack_operation.product_id == lines.product_id">
-                                <t t-set="punit" t-value="lines.discount"/>
+                                <t t-set="punit" t-value="lines.discount"/><span> %</span>
                               </t>
                             </t>
                             <t t-esc="punit"/>
