@@ -2,8 +2,8 @@
 <odoo>
   <data>
     <template id="report_cotizacion_parcialidad">
-      <t t-call="web.html_container">
-          <t t-call="web.external_layout">
+      <t t-call="report.html_container">
+          <t t-call="report.external_layout">
            <div class="page">
              <t t-set="variablex" t-value="[]"/>
              <t t-set="contador" t-value="1"/>
@@ -13,8 +13,8 @@
 
              <t t-foreach="docs" t-as="o">
                <t t-if="contador==1">
-                
-                <div class="row pull-right">
+                <br/>
+                <div class="row">
                   <div class="col-xs-6">
                     <div t-if="o.move_lines and o.move_lines[0].partner_id and o.move_lines[0].partner_id.id != o.partner_id.id">
                             <span><strong>Dirección de entrega:</strong></span>
@@ -156,7 +156,8 @@
             </table>
 
 
-            <div class="row pull-right" name="total">
+            <div class="row" name="total">
+              <div class="col-xs-9"></div>
               <div class="col-xs-3">
                 <table class="table table-condensed">
                   <tr class="border-black">
