@@ -50,8 +50,8 @@
             <t t-foreach="docs" t-as="o">
               <!--T-IF CONTADOR    -->
             
-            <t t-set="pack_operation_ids" t-value="o.move_line_ids"/>
-            <t groups="base.group_portal" t-set="pack_operation_ids" t-value="o.move_line_ids.sudo()"/>
+            <t t-set="pack_operation_ids" t-value="o.pack_operation_ids"/>
+            <t groups="base.group_portal" t-set="pack_operation_ids" t-value="o.pack_operation_ids.sudo()"/>
             <t t-as="pack_operation" t-foreach="pack_operation_ids.sorted(key=lambda r: r.product_id.default_code)">
             <t t-foreach="o.sale_id.order_line" t-as="lines">
               <t t-if="pack_operation.product_id == lines.product_id">
@@ -110,7 +110,7 @@
                 <t t-foreach="variablex" t-as="pru">
                   <t t-if="contadorr==1">
                     <t t-foreach="docs" t-as="o">
-                      <t t-set="pack_operation_ids" t-value="o.move_line_ids"/>
+                      <t t-set="pack_operation_ids" t-value="o.pack_operation_ids"/>
                       <t t-as="pack_operation" t-foreach="pack_operation_ids.sorted(key=lambda r: r.product_id.default_code)">
                         <tr>
                           <td><span t-field="pack_operation.product_id"/></td>
